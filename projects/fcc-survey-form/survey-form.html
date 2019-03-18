@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Survey form | FreeCodeCamp</title>
+  <link rel="stylesheet" type="text/css" href="app.css">
+  <!-- reset all styles with Normalize -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+</head>
+
+<body>
+
+  <div class="container">
+    <h1 id="title">Survey form</h1>
+
+    <form id="survey-form" onsubmit="return false">
+      <legend>
+        <p id="description">Let us know how we can help your</p>
+      </legend>
+
+      <!-- Name -->
+      <div class="form-row">
+        <div class="form-column">
+          <label id="name-label" for="name">* Name:</label>
+        </div>
+        <div class="form-column">
+          <input class="input-field" type="text" name="name" id="name"
+            placeholder="Enter your name" autofocus required>
+        </div>
+      </div>
+
+      <!-- Email -->
+      <div class="form-row">
+        <div class="form-column">
+          <label id="email-label" for="email">* Email:</label>
+        </div>
+        <div class="form-column">
+          <input class="input-field" type="email" name="email" id="email"
+            placeholder="Enter your email" required>
+        </div>
+      </div>
+
+      <!-- Age -->
+      <div class="form-row">
+        <div class="form-column">
+          <label id="number-label" for="number">* Age:</label>
+        </div>
+        <div class="form-column">
+          <input class="input-field" type="number" name="number" id="number"
+            placeholder="Age" min = "1" max="99" required>
+        </div>
+      </div>
+
+      <!-- Occupation -->
+      <div class="form-row">
+        <div class="form-column">
+          <label>Which option best describe your?</label>
+        </div>
+        <div class="form-column">
+          <select id="dropdown" class="select-field">
+            <option disabled selected>Select an option</option>
+            <option>Student</option>
+            <option>Full time job</option>
+            <option>Prefer not to say</option>
+            <option>Other</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Recommendations -->
+      <div class="form-row">
+        <div class="form-column at">
+          <label class="at">
+            * How likely is that you would recommend our service to a friend?
+          </label>
+        </div>
+        <div class="form-column">
+          <div class="form-radio-container">
+            <div class="form-radio-item">
+              <input type="radio" name="recommend" id="r1" value="1">
+              <label for="r1">Difinitely</label>
+            </div>
+            <div class="form-radio-item">
+              <input type="radio" name="recommend" id="r2" value="2">
+              <label for="r2">Mayby</label>
+            </div>
+            <div class="form-radio-item">
+              <input type="radio" name="recommend" id="r3" value="3">
+              <label for="r3">Not sure</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Prefer -->
+      <div class="form-row">
+        <div class="form-column">
+          <label>
+            What do you like most:
+          </label>
+        </div>
+        <div class="form-column">
+          <select class="select-field" id="dropdown">
+            <option disabled selected>Select an option</option>
+            <option>Chelenges</option>
+            <option>Projects</option>
+            <option>Community</option>
+            <option>Open Source</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Improve -->
+      <div class="form-row">
+        <div class="form-column at">
+          <label>
+            Things that should be improved in the future<br>
+            (Check all that apply):
+          </label>
+        </div>
+        <div class="form-column">
+          <div class="form-radio-container">
+            <div class="form-radio-item">
+              <input type="checkbox" name="improved" id="ch1" value="1">
+              <label for="ch1">Front-end Projects</label>
+            </div>
+            <div class="form-radio-item">
+              <input type="checkbox" name="improved" id="ch3" value="3">
+              <label for="ch3">Data Visualization</label>
+            </div>
+            <div class="form-radio-item">
+              <input type="checkbox" name="improved" id="ch4" value="4">
+              <label for="ch4">Challenges</label>
+            </div>
+            <div class="form-radio-item">
+              <input type="checkbox" name="improved" id="ch5" value="5">
+              <label for="ch5">Open Source Community</label>
+            </div>
+            <div class="form-radio-item">
+              <input type="checkbox" name="improved" id="ch6" value="6">
+              <label for="ch6">Gitter help</label>
+            </div>
+            <div class="form-radio-item">
+              <input type="checkbox" name="improved" id="ch7" value="7">
+              <label for="ch7">Videos</label>
+            </div>
+            <div class="form-radio-item">
+              <input type="checkbox" name="improved" id="ch8" value="8">
+              <label for="ch8">City Meetups</label>
+            </div>
+            <div class="form-radio-item">
+              <input type="checkbox" name="improved" id="ch9" value="9">
+              <label for="ch9">Wiki</label>
+            </div>
+            <div class="form-radio-item">
+              <input type="checkbox" name="improved" id="ch10" value="10">
+              <label for="ch10">Forum</label>
+            </div>
+            <div class="form-radio-item">
+              <input type="checkbox" name="improved" id="ch11" value="11">
+              <label for="ch11">Additional Courses</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Comments -->
+      <div class="form-row">
+        <div class="form-column at" style="padding-top: 5px">
+          <label for="suggestion">Any comments or Suggestions?</label>
+        </div>
+        <div class="form-column">
+          <textarea id="suggestion" class="form-area"
+            placeholder="Enter your comment here..."></textarea>
+        </div>
+      </div>
+
+      <!-- Submit -->
+      <div class="form-row jc">
+        <button type="submit" class="btn primary disabled" id="submit">
+          Submit
+        </button>
+      </div>
+
+    </form>
+  </div>
+
+  <!-- Test user stories -->
+  <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</body>
+</html>

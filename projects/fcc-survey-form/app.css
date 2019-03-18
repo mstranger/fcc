@@ -1,0 +1,153 @@
+/* import main font */
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+/**
+* Build grid with flex-box
+* .form-row - grid row in form
+* .form-column - grid column in form
+*/
+
+body {
+  background-color: lightsteelblue;
+  font-family: Raleway, sans-serif;
+}
+
+form legend {
+  display: block;
+  padding-top: 15px;
+}
+
+#title {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+#description {
+  font-size: 1.1em;
+}
+
+.container {
+  width: 75%;
+  min-width: 300px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#survey-form {
+  background-color: white;
+  border-radius: 5px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  margin-bottom: 10px;
+}
+
+.form-row {
+  display: flex;
+  align-items: center;
+  margin: 1.2em;
+}
+
+.form-column {
+  width: 100%;
+}
+
+.form-column:nth-child(odd) {
+  text-align: right;
+  margin-right: 1.4em;
+}
+
+.form-column:nth-child(even) {
+  text-align: left;
+}
+
+.input-field {
+  height: 1.5em;
+  width: 75%;
+  padding: 2px 5px;
+}
+
+.select-field {
+  width: 10.5em;
+  height: 2.5em;
+  font-size: 0.85em;
+  padding: 5px;
+  font-weight: bolder;
+}
+
+.form-radio-item {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.btn {
+  padding: 12px 24px;
+  border-radius: 5px;
+  color: white;
+  border: none;
+}
+
+.btn.disabled {
+  background-color: skyblue;
+}
+
+.primary {
+  background-color: dodgerblue;
+}
+
+/* Align-Top element*/
+.at {
+  align-self: flex-start;
+}
+
+/* Justify-Center */
+.jc {
+  flex-direction: column;
+}
+
+::-webkit-input-placeholder {
+  font-size: 0.85em;
+}
+
+::-ms-input-placeholder {
+  font-size: 0.85em;
+}
+
+::placeholder {
+  font-size: 0.85em;
+  padding: 5px;
+  font-family: Arial;
+}
+
+.form-area {
+  width: 75%;
+  height: 3.5em;
+}
+
+textarea::placeholder {
+  font-family: monospace;
+  font-size: 1.1em;
+}
+
+/* for small screen */
+@media (max-width: 525px) {
+  .form-row {
+    flex-direction: column;
+  }
+
+  .form-column:nth-child(odd) {
+    text-align: left;
+    margin-bottom: 5px;
+  }
+
+  .form-column:nth-child(even) {
+    text-align: left;
+  }
+
+  .form-area {
+    width: 100%;
+  }
+
+  label {
+    margin: 10px;
+  }
+}
