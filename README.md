@@ -27,7 +27,7 @@
   - [x] Basic algorithms scriptings
   - [ ] Object oriented programming
   - [ ] Functional programming
-  - [ ] Intermediate algorithm scripting 
+  - [x] Intermediate algorithm scripting 
   - [ ] Javascript projects
 	  - [ ] palindrome checker
 	  - [ ] roman number converter
