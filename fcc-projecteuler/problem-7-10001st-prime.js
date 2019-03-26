@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+
 /**
 * Check if `n` is prime number
 * @param {number} n - Candidate for check
@@ -10,7 +12,7 @@ function isPrime (n, primes) {
   if (n < 2) return false
 
   for (let i = 0; primes[i] <= limit; i++) {
-    if (n % primes[i] == 0) {
+    if (n % primes[i] === 0) {
       return false
     }
   }
@@ -23,7 +25,7 @@ function isPrime (n, primes) {
 * @param {number} n
 * @returns {number}
 */
-function nthPrime(n) {
+function nthPrime (n) {
   let primes = [2]
   let candidate = 3
 

@@ -15,7 +15,7 @@ class Prime {
   * @param {number} number - A positive integer
   * @returns {Array.<number>}
   */
-  static allPrimes(number) {
+  static allPrimes (number) {
     let primes = []
     let i = 2
 
