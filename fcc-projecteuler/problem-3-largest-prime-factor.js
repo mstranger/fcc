@@ -32,3 +32,5 @@ class Prime {
     return primes
   }
 }
+
+module.exports = largestPrimeFactor

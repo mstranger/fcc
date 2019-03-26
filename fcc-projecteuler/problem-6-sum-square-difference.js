@@ -36,3 +36,5 @@ function squareSum (n) {
 
   return result * result
 }
+
+module.exports = sumSquareDifference

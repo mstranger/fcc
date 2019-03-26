@@ -39,3 +39,5 @@ function nthPrime (n) {
 
   return primes[primes.length - 1]
 }
+
+module.exports = nthPrime
