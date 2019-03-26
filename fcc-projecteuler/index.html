@@ -11,10 +11,39 @@
   <div id="qunit-fixture"></div>
 
   <script src="https://code.jquery.com/qunit/qunit-2.9.2.js"></script>
-  <script src="tests.js"></script>
+  <script src="problem-6-sum-square-difference.js"></script>
+  <script src="problem-7-10001st-prime.js"></script>
+  <script src="problem-3-largest-prime-factor.js"></script>
   <script>
-    QUnit.test( "hello test", function ( assert ) {
-      assert.ok( 1 == "2", "Passed!" )
+
+    /* eslint-disable */
+    QUnit.module('Problem 3', function () {
+      QUnit.test('Validate answers', function (t) {
+        let data = [2, 3, 5, 7, 13195, 600851475143]
+        let answers = [2, 3, 5, 7, 29, 6857]
+        data.forEach((e, i) => {
+          t.ok(largestPrimeFactor(e) == answers[i], `check for ${e}`)
+        })
+      })
+    })
+
+    QUnit.module('Problem 6', function () {
+      QUnit.test('Validate answers', function (t) {
+        t.ok(sumSquareDifference(10) == 2640, 'check for 10')
+        t.ok(sumSquareDifference(20) == 41230, 'check for 20')
+        t.ok(sumSquareDifference(100) == 25164150, 'check for 100')
+      })
+    })
+
+    QUnit.module('Problem 7', function () {
+      QUnit.test('Validate right answers', function (t) {
+        let data = [6, 10, 100, 1000, 10001]
+        let answers = [13, 29, 541, 7919, 104743]
+
+        data.forEach(function (e, i) {
+          t.ok(nthPrime(e) == answers[i], `check number ${e}`)
+        })
+      })
     })
   </script>
 </body>
