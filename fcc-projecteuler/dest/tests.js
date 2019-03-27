@@ -96,6 +96,62 @@ module.exports = largestPrimeFactor
 
 },{}],4:[function(require,module,exports){
 /**
+* Find largest palindrome made from the product of two n-digit numbers
+* @param {number} n
+* @returns {number}
+*/
+function largestPalindromeProduct (n) {
+  if (n > 6 || n < 1) return `not implemented for ${n}`
+
+  const dist = {
+    1: { min: 1, max: 9, factor: 1 },
+    2: { min: 10, max: 99, factor: 10 },
+    3: { min: 100, max: 999, factor: 100 },
+    4: { min: 1000, max: 9999, factor: 100 },
+    5: { min: 10000, max: 99999, factor: 1000 },
+    6: { min: 100000, max: 999999, factor: 1000 }
+  }
+
+  let largest = 0
+  // let largestPair
+
+  let curr = dist[n].max - dist[n].factor
+
+  while (true) {
+    for (let i = curr; i < dist[n].max; i++) {
+      for (let j = dist[n].max; j >= i; j--) {
+        if (isPalindrom(i * j) && largest < i * j) {
+          largest = i * j
+          // largestPair = [i, j]
+        }
+      }
+    }
+
+    if (largest > 0 || curr < dist[n].min) {
+      break
+    } else {
+      curr -= dist[n].factor
+    }
+  }
+
+  // console.log(largestPair)
+  return largest
+}
+
+/**
+* Check if given number is palindrom
+* @param {number} n
+* @returns {boolean}
+*/
+function isPalindrom (n) {
+  let reversed = n.toString().split('').reverse().join('')
+  return n.toString() === reversed
+}
+
+module.exports = largestPalindromeProduct
+
+},{}],5:[function(require,module,exports){
+/**
 * Find the diff between sum of squares and square of sum.
 * @param {number} n - Positive integer
 * @returns {number}
@@ -136,7 +192,7 @@ function squareSum (n) {
 
 module.exports = sumSquareDifference
 
-},{}],5:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 /* eslint-disable no-unused-vars */
 
 /**
@@ -181,7 +237,7 @@ function nthPrime (n) {
 
 module.exports = nthPrime
 
-},{}],6:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 const primeSummation = require('../problem-10-summation-of-primes')
 const benchmark = require('../benchmark')
 const { test } = QUnit
@@ -203,7 +259,7 @@ test('Validate runtime', function (assert) {
   assert.ok(benchmark(primeSummation, 2000000) < timeout, 'check 2_000_000')
 })
 
-},{"../benchmark":1,"../problem-10-summation-of-primes":2}],7:[function(require,module,exports){
+},{"../benchmark":1,"../problem-10-summation-of-primes":2}],8:[function(require,module,exports){
 const largestPrimeFactor = require('../problem-3-largest-prime-factor')
 const { test } = QUnit
 
@@ -217,7 +273,21 @@ test('Validate answers', function (assert) {
   })
 })
 
-},{"../problem-3-largest-prime-factor":3}],8:[function(require,module,exports){
+},{"../problem-3-largest-prime-factor":3}],9:[function(require,module,exports){
+const largestPalindromeProduct = require('../problem-4-largest-palindrome-product')
+const { test } = QUnit
+
+QUnit.module('Problem 4: largest palindrome product', {})
+
+test('validate answers', function (assert) {
+  assert.equal(largestPalindromeProduct(0), 'not implemented for 0', 'check 0')
+  assert.equal(largestPalindromeProduct(1), 9, 'check 1')
+  assert.equal(largestPalindromeProduct(2), 9009, 'check for 2')
+  assert.equal(largestPalindromeProduct(3), 906609, 'check for 3')
+  assert.equal(largestPalindromeProduct(4), 99000099, 'check for 4')
+})
+
+},{"../problem-4-largest-palindrome-product":4}],10:[function(require,module,exports){
 const sumSquareDifference = require('../problem-6-sum-square-difference.js')
 const { test } = QUnit
 
@@ -229,7 +299,7 @@ test('Validate answers', function (assert) {
   assert.equal(sumSquareDifference(100), 25164150, 'check for 100')
 })
 
-},{"../problem-6-sum-square-difference.js":4}],9:[function(require,module,exports){
+},{"../problem-6-sum-square-difference.js":5}],11:[function(require,module,exports){
 const nthPrime = require('../problem-7-10001st-prime')
 const { test } = QUnit
 
@@ -244,4 +314,4 @@ test('Validate answers', function (assert) {
   })
 })
 
-},{"../problem-7-10001st-prime":5}]},{},[6,7,8,9]);
+},{"../problem-7-10001st-prime":6}]},{},[7,8,9,10,11]);
