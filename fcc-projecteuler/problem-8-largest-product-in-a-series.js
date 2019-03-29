@@ -21,3 +21,5 @@ function largestProductinaSeries (n) {
 
   return result
 }
+
+module.exports = largestProductinaSeries

@@ -17,3 +17,5 @@ function fiboEvenSum (n) {
 
   return sum
 }
+
+module.exports = fiboEvenSum
